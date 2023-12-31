@@ -1,0 +1,17 @@
+footer {
+    width: 100%;
+    margin-top: 2rem;
+    background-color: var(--color-background);
+    color: var(--color-font);
+    padding: .5rem 0;
+    z-index: 1;
+}
+
+footer a {
+    color: #eee;
+}
+
+footer>p {
+    text-align: center;
+    font-size: .9rem;
+}

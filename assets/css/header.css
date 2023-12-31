@@ -1,0 +1,120 @@
+.show-menu .hamburguer {
+    right: 1rem;
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-background);
+    z-index: 2;
+}
+header > a > img {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    border-radius: 100px;
+    width: 43px;
+    height: 43px;
+}
+header h1 {
+    position: relative;
+    font-size: 1rem;
+    margin: 15px 0 0 80px;
+    text-align: left;
+    color: white;
+}
+.hamburguer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 2rem;
+    height: 2rem;
+    z-index: 3;
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+    transition: 500ms;
+}
+.hamburguer > div{
+    width: 100%;
+    height: 0.1rem;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 1px black;
+    transition: transform 500ms;
+}
+.show-menu #line1 {
+    transform: rotate(45deg) translate(.3rem, .4rem);
+    width: 100%;
+}
+.show-menu #line2 {
+    opacity: 0;
+    visibility: hidden;
+}
+.show-menu #line3 {
+    transform: rotate(-45deg) translate(.3rem, -.4rem);
+    width: 100%;
+}
+aside {
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    max-width: 300px;
+    height: calc(100vh - 50px);
+    background: var(--color-background);
+    font-size: 1.3rem;
+    color: rgb(238, 238, 238);
+    right: calc(-300px - 2rem);
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+    z-index: 1;
+    padding: 1rem;
+}
+aside > div{
+    max-width: 200px;
+}
+.sidebar-visible{
+    right: 0;
+}
+nav {
+   display: flex;
+   flex-direction: column;
+   row-gap: 1rem;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    text-shadow: .1px .1px .5px rgba(255, 255, 255, 0.678);
+    transition: .200ms all;
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+nav a::before {
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #eee;
+    position: absolute;
+    margin-right: 50%;
+    margin-top: 33px;
+    transition: all 300ms;
+    border-radius: 0 3px 3px 0;
+}
+
+nav a:hover:before {
+    width: 20%;
+}
+
+.menu-social-media {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 1rem;
+}
+.menu-social-media a {
+    color: rgb(238, 238, 238);
+    transition: 200ms ease-in;
+}

@@ -1,0 +1,106 @@
+:root{
+    --color-background: rgb(22, 22, 22);
+    --color-font: #222222;
+    --color-link: #a37000;
+    --color-dark-mode: #fff;
+}
+
+html {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgb(241, 241, 241);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(43, 42, 41);
+    border-radius: 20px;
+    border: 1px solid rgb(241, 241, 241);
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(43, 42, 41) rgb(241, 241, 241);
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif; /*'Times New Roman', Times, serif;*/
+}
+main, section{
+    padding: .5rem 1rem;
+}
+article{
+    color: var(--color-font);
+}
+article p{
+    line-height: 25px;
+    font-size: 1.1rem;
+}
+main img{
+    border-radius: 7px;
+}
+section{
+    margin: 1rem 0;
+}
+.grid-container {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 2.5rem;
+}
+.posts-relation > div{
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.tags {
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.tags a {
+    margin-right: 1rem;
+    text-decoration: none;
+    color: var(--color-background);
+    background-color: #ececec;
+    padding: .5rem;
+    border-radius: 7px;
+}
+.tags a:hover {
+    text-decoration: none;
+} 
+/* Dark Mode */
+.menu-dark-mode{
+    margin-top: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+.menu-dark-mode svg{
+    cursor: pointer;
+}
+.dark-mode body {
+    background-color: var(--color-background);
+    color: var(--color-dark-mode);
+}
+.dark-mode header{
+    box-shadow: 1px 2px 3px #0000003f;
+}
+.dark-mode article{
+    color: var(--color-dark-mode);
+}
+.dark-mode .shared svg{
+    color: var(--color-dark-mode);
+}
+.dark-mode footer{
+    color: var(--color-dark-mode);
+}
