@@ -101,6 +101,3 @@ section{
 .dark-mode .shared svg{
     color: var(--color-dark-mode);
 }
-.dark-mode footer{
-    color: var(--color-dark-mode);
-}
