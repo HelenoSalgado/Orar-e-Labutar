@@ -1,75 +1,10 @@
-# Nuxt 3 Minimal Starter
+# Blog Minimo em Nuxt 3
+Este é um projeto de blog simples, que está sendo desenvolvido com Nuxt 3. 
+Tem como finalidade gerar arquivos estáticos, mas também pode ser executado no modo SSR (Server Side Rendering). Os arquivos são servidos pelo Cloudflare Pages e são publicados nesse endereço: <https://orarelabutar.pages.dev>. 
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# CMS Headless
+Escolhi um gerenciador de conteúdo de código aberto, o [Strapi](https://github.com/strapi/strapi), para gravar, e eventualmente publicar, através de um hook, os posts deste blog.
+<hr>
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+> _**"Os olhos vêem apenas o que traz consigo o poder de ver."**_  <br>
+> _Cícero_.
