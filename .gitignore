@@ -1,0 +1,9 @@
+.env
+node_modules
+.nuxt
+.output
+yarn-error.log
+.htaccss
+.wrangler
+deploy.sh
+
