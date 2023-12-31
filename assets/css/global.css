@@ -2,7 +2,8 @@
     --color-background: rgb(22, 22, 22);
     --color-font: #222222;
     --color-link: #a37000;
-    --color-dark-mode: #fff;
+    --color-dark-mode: #ffffff;
+    --color-dark-soft: #cacaca;
 }
 
 html {
@@ -95,8 +96,11 @@ section{
 .dark-mode header{
     box-shadow: 1px 2px 3px #0000003f;
 }
-.dark-mode article{
+.dark-mode .article-author a{
     color: var(--color-dark-mode);
+ }
+.dark-mode article{
+    color: var(--color-dark-soft);
 }
 .dark-mode .shared svg{
     color: var(--color-dark-mode);

@@ -33,7 +33,7 @@ export default defineNuxtConfig({
   css: ['@/assets/css/main.css'],
   modules: ['@nuxtjs/strapi', '@nuxtjs/color-mode'],
   strapi: {
-    //url: process.env.BASE_URL_API,
+    url: process.env.BASE_URL_API,
   },
   colorMode: {
     preference: 'light'
