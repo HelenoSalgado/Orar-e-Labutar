@@ -1,6 +1,6 @@
 {
   "name": "orarelabutar",
-  "private": true,
+  "private": false,
   "type": "module",
   "version": "19.x",
   "scripts": {
