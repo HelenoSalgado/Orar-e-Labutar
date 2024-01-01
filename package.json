@@ -2,7 +2,9 @@
   "name": "orarelabutar",
   "private": false,
   "type": "module",
-  "version": "19.x",
+  "engines": {
+    "node": ">=20.10.0"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
