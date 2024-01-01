@@ -2,6 +2,7 @@
   "name": "orarelabutar",
   "private": true,
   "type": "module",
+  "version": "19.x",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
