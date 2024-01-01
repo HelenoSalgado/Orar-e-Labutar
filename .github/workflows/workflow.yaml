@@ -2,6 +2,7 @@ name: Integration Continuo - Nuxt Site
 on: 
   push:
     branches: ['main']
+  pull_request_target:
   workflow_dispatch:
   repository_dispatch:
 permissions:
