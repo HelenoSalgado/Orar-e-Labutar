@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "19.x"
-      - name: Generate and export Static HTML
+      - name: Generate Pages
         run: |
           yarn install
           yarn generate
