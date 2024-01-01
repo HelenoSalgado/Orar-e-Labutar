@@ -17,9 +17,8 @@ jobs:
         run: |
           yarn install
           yarn generate
-
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with: 
             path: ./dist
   deploy:
