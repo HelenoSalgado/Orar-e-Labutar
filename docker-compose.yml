@@ -10,4 +10,4 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
     volumes:
-      - /mnt/postgres/orar-e-labutar:/var/lib/postgresql/data
+      - /home/heleno/postgres/orar-e-labutar:/var/lib/postgresql/data

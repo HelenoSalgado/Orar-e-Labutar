@@ -1,16 +1,19 @@
 <template>
     <main>
-        <h1>Posts Recentes</h1>
+        <h1 class="title-icon-flex">
+            <IconsBookOpen/>
+            <span>Posts Recentes</span>
+        </h1>
             <div class="grid-container">
                 <PostPreview v-for="post in posts" :key="post.id"
                   :title="post.attributes?.title"
+                  :description="post.attributes?.description"
                   :slug="post.attributes?.slug"
                   :imgUrl="post.attributes?.imgURL"
                 />
         </div>
     </main>
     <section>
-        <h3>Tags</h3>
         <Tags/>
     </section>
 </template>

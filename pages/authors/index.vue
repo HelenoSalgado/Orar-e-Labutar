@@ -4,7 +4,6 @@
         <div class="container-authors">
             <AuthorPreview />
         </div>
-        <h3>Tags</h3>
         <Tags />
     </main>
 </template>
