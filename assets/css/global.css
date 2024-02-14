@@ -110,10 +110,11 @@ main img{
 .post-card-text>a {
     display: block;
     color: var(--color-link);
-    width: fit-content;
+    width: 90px;
     padding: .5rem 1rem;
     background-color: var(--color-background);
     border-radius: 3px;
+    font-weight: bold;
 }
 
 .post-card-box-image {

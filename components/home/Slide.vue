@@ -34,7 +34,7 @@ onBeforeMount(() => {
 
         iMin++;
 
-    }, 2000);
+    }, 5000);
 });
 </script>
 <style scoped>
