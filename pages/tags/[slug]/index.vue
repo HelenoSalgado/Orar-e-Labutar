@@ -1,9 +1,13 @@
 <template>
     <main>
-        <h1>#{{ tag?.attributes.name }}</h1>
+        <h1 class="title-icon-flex">
+            <IconsTag/>
+            <span>{{ tag?.attributes.name }}</span>
+        </h1>
         <div class="grid-container">
             <PostPreview v-for="post in postsInTag" :key="post.id"
-             :title="post.attributes.title" 
+             :title="post.attributes.title"
+             :description="post.attributes?.description" 
              :slug="post.attributes.slug" 
              :imgUrl="post.attributes.imgURL" 
             />
@@ -13,7 +17,6 @@
         <Shared :slug="'tags/' + slug" :description="'tags'" />
     </main>
     <section>
-        <h3>Tags</h3>
         <Tags />
     </section>
 </template>
@@ -43,12 +46,3 @@ useSeoMeta({
     mode: 'server',
 });
 </script>
-<style scoped>
-.grid-container {
-    margin: 3rem 0 2rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.5rem;
-    max-width: 1200px;
-}
-</style>

@@ -4,6 +4,7 @@
             <div class="grid-container">
                 <PostPreview v-for="post in posts" :key="post.id"
                   :title="post.attributes?.title"
+                  :description="post.attributes?.description"
                   :slug="post.attributes?.slug"
                   :imgUrl="post.attributes?.imgURL"
                 />
@@ -13,7 +14,6 @@
         <Shared slug="/posts" description="Veja todos os artigos do blog Orar e Labutar" />
     </main>
     <section>
-        <h3>Tags</h3>
         <Tags />
     </section>
 </template>

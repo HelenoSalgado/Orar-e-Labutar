@@ -17,7 +17,9 @@
        </div>
     </main>
     <section class="posts-relation">
-      <h2>Deste autor</h2>
+      <h2 class="title-icon-flex">
+        <IconsUser/>
+        <span>Deste Autor</span></h2>
       <div>
         <PostRelation v-for="post in posts" :key="post.id"
          :title="post.attributes.title"
@@ -27,13 +29,15 @@
       </div>
     </section>
     <section>
-      <h1>Autores</h1>
+      <h1 class="title-icon-flex"> 
+        <IconsUsers/>
+        <span>Autores</span>
+      </h1>
         <div class="container-authors">
             <AuthorPreview />
         </div>
     </section>
     <section>
-      <h3>Tags</h3>
       <Tags />
     </section>
 </template>

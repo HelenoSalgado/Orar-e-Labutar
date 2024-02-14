@@ -7,7 +7,10 @@
     <Shared :slug="post?.attributes.slug" :description="post?.attributes.description" />
   </main>
   <section class="posts-relation">
-      <h2>Deste autor</h2>
+      <h2 class="title-icon-flex">
+        <IconsBookOpen/> 
+        <span>Posts Relacionados</span>
+      </h2>
       <div>
         <PostRelation v-for="post in posts" :key="post.id"
          :title="post.attributes.title"
@@ -17,7 +20,6 @@
       </div>
     </section>
   <section>
-      <h3>Tags</h3>
       <Tags />
   </section>
 </template>

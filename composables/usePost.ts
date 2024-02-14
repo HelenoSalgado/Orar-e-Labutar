@@ -29,7 +29,7 @@ class UsePost{
     async previews(){
         const { find } = useStrapi();
         const { data } = await useAsyncData('previews', () => find('posts', {
-            fields: ['slug', 'imgURL', 'title']
+            fields: ['slug', 'imgURL', 'title', 'description']
         }));
         return {
             data: data.value?.data as TPostPreview[],

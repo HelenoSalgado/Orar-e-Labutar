@@ -1,53 +1,23 @@
 <template>
   <div class="post-card">
-    <div class="box-image">
-      <img :src="imgUrl" :alt="title"/>
+    <div class="post-card-box-image">
+      <a :href="'/posts/'+slug">
+         <img :src="imgUrl" :alt="title" loading="lazy"/>
+      </a>
     </div>
-    <a :href="'/posts/'+slug">
-      <div class="text-artigo">
+      <div class="post-card-text">
         <h2>{{title}}</h2>
+        <p>{{description}}</p>
+        <a :href="'/posts/'+slug">Ler Artigo</a>
       </div>
-    </a>
   </div>
 </template>
 
-<script setup>
-const { title, slug, imgUrl } = defineProps([
-  'title',  
+<script setup lang="ts">
+const { title, description, slug, imgUrl } = defineProps([
+  'title',
+  'description',  
   'slug', 
   'imgUrl'
 ]);
 </script>
-
-<style scoped>
-.post-card{
-  flex: 1 2 300px;
-  height: 270px;
-  border-radius: 7px;
-  overflow: hidden;
-  box-shadow: 1px 5px 5px #0000005e;
-  background-color: var(--color-background);
-}
-.text-artigo{
-  width: 90%;
-  margin: auto;
-  background-color: var(--color-background);
-}
-.text-artigo h2{
-  color: #fff;
-  font-size: 1.1rem;
-}
-.box-image{
-  overflow: hidden;
-}
-img{
-  display: block;
-  margin: 0;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-a{
-   text-decoration: none;
-}
-</style>

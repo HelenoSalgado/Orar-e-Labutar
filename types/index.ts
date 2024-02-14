@@ -77,6 +77,7 @@ export interface TPostPreview {
     id: number;
     attributes: {
       title: string;
+      description: string;
       imgURL: string;
       slug: string;
     }
