@@ -160,6 +160,9 @@ main img{
 }
 .dark-mode article, .dark-mode .article-author a, .dark-mode .post-card-text, .dark-mode .tags a{
     color: var(--color-dark-mode);
+ }
+.dark-mode article{
+    color: var(--color-dark-soft);
 }
 .dark-mode .shared svg{
     color: var(--color-dark-mode);
