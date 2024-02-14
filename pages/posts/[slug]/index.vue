@@ -8,7 +8,7 @@
   </main>
   <section class="posts-relation">
       <h2 class="title-icon-flex">
-        <IconsUser/> 
+        <IconsBookOpen/> 
         <span>Posts Relacionados</span>
       </h2>
       <div>
