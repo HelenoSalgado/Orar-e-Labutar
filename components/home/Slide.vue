@@ -34,7 +34,7 @@ onBeforeMount(() => {
 
         iMin++;
 
-    }, 5000);
+    }, 2000);
 });
 </script>
 <style scoped>
@@ -44,7 +44,6 @@ onBeforeMount(() => {
     aspect-ratio: 3/1;
     overflow: hidden;
     margin: 50px auto 0 auto;
-    border-radius: 0 0 7px 7px;
 }
 .slides-container img{
     position: absolute;
