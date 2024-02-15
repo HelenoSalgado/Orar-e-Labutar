@@ -1,19 +1,17 @@
 <template>
    <header id="header">
         <a href="/">
-           <img src="/img/licoes1.jpg" alt="">
+           <NuxtImg src="/img/licoes1-p.webp" alt="logo"/>
         </a>
         <h1>Orar e Labutar</h1>
         <div 
-        class="hamburguer" 
-        :class="{ 'show-menu': visibleMenu }"
-        @click="visibleMenu = !visibleMenu">
+        class="hamburguer">
           <div id="line1"></div>
           <div id="line2"></div>
           <div id="line3"></div>
         </div>
     </header>
-    <aside :class="{ 'sidebar-visible': visibleMenu }">
+    <aside class="aside-menu">
         <nav>
             <NuxtLink to="/"><IconsHome/>Home</NuxtLink>
             <NuxtLink to="/sobre"><IconsGlobe/>Sobre</NuxtLink>
@@ -34,6 +32,7 @@
     </aside>
 </template>
 <script setup lang="ts">
-const visibleMenu = ref(false);
-const colorMode = ref(useColorMode());
+const colorMode = ref(useColorMode()); 
+import menu from '../assets/ts/menu'; 
+onBeforeMount(() => menu());
 </script>

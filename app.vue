@@ -15,22 +15,7 @@ useHead({
   titleTemplate: ((titleChunk) => {
     if (titleChunk?.includes('|')) return titleChunk;
     return title.value
-  }),
-  link: [
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com'
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Montserrat&display=swap',
-      crossorigin: ''
-    },
-    {
-      rel: 'canonical',
-      href: () => pub.site.url + route.path
-    }
-  ]
+  })
 });
 
 useSeoMeta({

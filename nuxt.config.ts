@@ -31,7 +31,14 @@ export default defineNuxtConfig({
   //   css: '/<rootDir>/assets/css'
   // },
   css: ['@/assets/css/main.css'],
-  modules: ['@nuxtjs/strapi', '@nuxtjs/color-mode'],
+  modules: ['@nuxtjs/strapi', '@nuxtjs/color-mode', "@nuxt/image"],
+  image: {
+    format: ['webp'],
+    domains: ['https://res.cloudinary.com'],
+    cloudinary: {
+      baseURL: 'https://res.cloudinary.com/bio01/image/upload/'
+    }
+  },
   strapi: {
     url: process.env.BASE_URL_API,
   },

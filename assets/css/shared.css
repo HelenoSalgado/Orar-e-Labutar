@@ -1,9 +1,0 @@
-.shared{
-    margin: 1rem 0;
-    display: flex;
-    column-gap: 2rem;
-    align-items: center;
-}
-.shared svg{
-    color: var(--color-background);
-}

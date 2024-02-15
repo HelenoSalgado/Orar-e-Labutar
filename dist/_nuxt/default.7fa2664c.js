@@ -1,1 +1,0 @@
-import{_ as o,a,f as e,b as s,J as c,F as r,o as d,K as l,L as u}from"./entry.4faecc06.js";const f={};function p(t,m){const _=l,n=u;return d(),a(r,null,[e(_),s("div",null,[c(t.$slots,"default",{},void 0,!0)]),e(n)],64)}const v=o(f,[["render",p],["__scopeId","data-v-e91c525b"]]);export{v as default};

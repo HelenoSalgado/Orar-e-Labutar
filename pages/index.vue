@@ -1,5 +1,5 @@
 <template>
-    <HomeSlide/>
+    <Slides/>
     <main>
         <h1 class="title-icon-flex">
             <IconsBookOpen/>

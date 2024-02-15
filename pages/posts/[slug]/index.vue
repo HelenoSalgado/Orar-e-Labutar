@@ -4,7 +4,11 @@
     <Post :title="post?.attributes.title" :content="post?.attributes.content" />
     <hr>
     <p>Compartilhe:</p>
-    <Shared :slug="post?.attributes.slug" :description="post?.attributes.description" />
+    <Shared 
+      :slug="post?.attributes.slug" 
+      :description="post?.attributes.description" 
+      :likes="post?.attributes.likes" 
+    />
   </main>
   <section class="posts-relation">
       <h2 class="title-icon-flex">
@@ -21,6 +25,9 @@
     </section>
   <section>
       <Tags />
+  </section>
+  <section>
+    <Slides />
   </section>
 </template>
 <script setup lang="ts">
@@ -48,8 +55,8 @@ useSeoMeta({
   ogImage: `${post.value?.attributes.imgURL}`,
   twitterTitle: `${title}`,
   twitterDescription: `${post.value?.attributes.description}`,
-  twitterImage: `${post.value?.attributes.imgURL}`,
+  twitterImage: `${post.value?.attributes.imgURL}`
 }, {
   mode: 'server',
-})
+});
 </script>
