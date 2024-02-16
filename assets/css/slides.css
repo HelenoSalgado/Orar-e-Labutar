@@ -23,16 +23,15 @@
     border-radius: 50%;
     cursor: pointer;
 }
-.slides-circle:hover, .circle-backgound{
+.slides-circle:hover, .circle-background{
     background-color: var(--color-background);
 }
 .mySlides{
-    opacity: 0;
-    transition: all 300ms;
+    visibility: hidden;
 }
 .mySlides:first-child{
-    opacity: 10;
+    visibility: visible;
 }
 .viewSlides{
-    opacity: 10;
+    visibility: visible;
 }

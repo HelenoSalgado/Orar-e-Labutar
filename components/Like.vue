@@ -1,6 +1,6 @@
 <template>
     <div class="like-container">
-        <span id="count-like">{{ likes }}</span>
+        <span id="count-like">{{ likes || 0 }}</span>
         <IconsLike/>
     </div>
 </template>

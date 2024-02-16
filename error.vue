@@ -4,31 +4,12 @@ const { error } = defineProps({
 });
 const handleError = () => clearError({ redirect: '/' });
 </script>
-
 <template>
     <Header></Header>
-    <div class="error">
+    <div class="page-error">
         <h1>Error {{ error?.status }}</h1>
         <p>{{ error?.message }}</p> 
         <button @click="handleError">Home</button> 
     </div>
-    <Footer class="footer"></Footer>
+    <Footer class="page-error-footer"></Footer>
 </template>
-<style scoped>
-.error{
-  position: absolute;
-  max-width: 1000px;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.footer{
-    position: absolute;
-    bottom: 0;
-}
-button{
-    font-size: 1rem;
-    padding: .2rem 1rem;
-    cursor: pointer;
-}
-</style>

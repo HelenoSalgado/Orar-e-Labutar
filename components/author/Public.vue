@@ -1,11 +1,10 @@
 <template>
     <div class="article-author">
-        <img :src="imgUrl" :alt="name">
+        <NuxtImg :src="imgUrl" :alt="name" width="60" height="60"/>
         <div>
             <NuxtLink :to="'/authors/'+slug">{{ name }}</NuxtLink>
             <span class="article-author-date" v-html="transformDate(date)"></span>
-        </div>
-        
+        </div>   
     </div>
 </template>
 <script setup lang="ts">

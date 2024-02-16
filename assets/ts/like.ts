@@ -8,10 +8,10 @@ export default function likeExec() {
     likeHeart?.addEventListener('click', () => {
         likeHeart.classList.toggle('like-animation');
         if (currentLike) {
-            countLike.textContent = String(indexLike++);
+            countLike.textContent = String(indexLike += 1);
             currentLike = false;
         } else {
-            countLike.textContent = String(indexLike--);
+            countLike.textContent = String(indexLike -= 1);
             currentLike = true;
         }
 

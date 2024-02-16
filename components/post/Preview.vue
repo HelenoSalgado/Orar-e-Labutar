@@ -2,7 +2,7 @@
   <div class="post-card">
     <div class="post-card-box-image">
       <a :href="'/posts/'+slug">
-         <NuxtImg :src="imgUrl" :alt="title"/>
+         <NuxtImg :src="imgUrl" :alt="title" loading="lazy"/>
       </a>
     </div>
       <div class="post-card-text">
@@ -12,7 +12,6 @@
       </div>
   </div>
 </template>
-
 <script setup lang="ts">
 const { title, description, slug, imgUrl } = defineProps([
   'title',

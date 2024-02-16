@@ -1,0 +1,16 @@
+.page-error {
+    position: absolute;
+    max-width: 1000px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.page-error button {
+    font-size: 1rem;
+    padding: .2rem 1rem;
+    cursor: pointer;
+}
+.page-error-footer {
+    position: absolute;
+    bottom: 0;
+}

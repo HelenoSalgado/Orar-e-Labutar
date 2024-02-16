@@ -15,11 +15,11 @@
         <IconsBookOpen/> 
         <span>Posts Relacionados</span>
       </h2>
-      <div>
-        <PostRelation v-for="post in posts" :key="post.id"
-         :title="post.attributes.title"
-         :img-url="post.attributes.imgURL"
-         :slug="post.attributes.slug"
+      <div v-for="postRelated in postsRelated" :key="postRelated.id">
+        <PostRelation v-if="postRelated?.id != post?.id"
+         :title="postRelated.attributes.title"
+         :img-url="postRelated.attributes.imgURL"
+         :slug="postRelated.attributes.slug"
         />
       </div>
     </section>
@@ -35,7 +35,7 @@ import type { TPost, TProfile } from '~/types';
 const slug = computed(() => useRoute().params.slug);
 const profile = ref<TProfile>();
 const post = ref<TPost>();
-const posts = ref<TPost[]>();
+const postsRelated = ref<TPost[]>();
 
 const { data } = await usePost.get(slug.value.toString());
 
@@ -44,7 +44,7 @@ post.value = Object.values(data).at(0);
 const title = `Orar e Labutar | ${post.value?.attributes.title}`;
 
 profile.value = Object(post.value?.attributes.profile).data;
-posts.value = Object(profile.value?.attributes.posts).data;
+postsRelated.value = Object(profile.value?.attributes.posts).data;
 
 useSeoMeta({
   title: `${title}`,

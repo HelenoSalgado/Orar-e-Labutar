@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   nitro: {
     output: {
       publicDir: 'dist'
-    },
+    }
   },
   runtimeConfig: {
     public: {
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         lang: 'pt-BR'
       },
       charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
+      viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.5',
       link: [
         {
           rel: 'icon',
@@ -27,16 +27,16 @@ export default defineNuxtConfig({
     ]
     }
   },
-  // alias: {
-  //   css: '/<rootDir>/assets/css'
-  // },
   css: ['@/assets/css/main.css'],
-  modules: ['@nuxtjs/strapi', '@nuxtjs/color-mode', "@nuxt/image"],
+  modules: ['@nuxtjs/strapi', '@nuxtjs/color-mode', '@nuxt/image'],
   image: {
     format: ['webp'],
     domains: ['https://res.cloudinary.com'],
     cloudinary: {
       baseURL: 'https://res.cloudinary.com/bio01/image/upload/'
+    },
+    alias: {
+      cloudinary: 'https://res.cloudinary.com'
     }
   },
   strapi: {

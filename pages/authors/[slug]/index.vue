@@ -3,7 +3,7 @@
        <div class="biograpy">
         <article>
           <div class="biograpy-box-image">
-            <img :src="profile?.attributes.imgUrl" :alt="profile?.attributes.name">
+            <NuxtImg :src="profile?.attributes.imgUrl" :alt="profile?.attributes.name" />
           </div>
           <h1>{{profile?.attributes.name}}</h1>
           <div v-html="md.render(profile?.attributes.biograpy as string)"></div>

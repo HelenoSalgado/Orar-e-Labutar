@@ -10,7 +10,6 @@
         </div>
     </div>
   </template>
-  
 <script setup>
 const { title, slug, imgUrl } = defineProps([
   'title',

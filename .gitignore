@@ -6,4 +6,4 @@ yarn-error.log
 .htaccss
 .wrangler
 deploy
-
+yarn.lock
