@@ -1,9 +1,9 @@
 <template>
     <div class="post-card">
       <div class="post-card-box-image">
-        <a :href="'/posts/'+slug">
+        <NuxtLink :href="'/posts/'+slug">
           <NuxtImg :src="imgUrl" :alt="title" format="webp" loading="lazy"/>
-        </a>
+        </NuxtLink>
       </div>
         <div class="post-card-text">
           <h2>{{title}}</h2>

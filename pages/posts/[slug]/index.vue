@@ -3,11 +3,11 @@
     <AuthorPublic :name="profile?.attributes.name" :img-url="profile?.attributes.imgUrl" :date="post?.attributes.updatedAt" :slug="profile?.attributes.slug" />
     <Post :title="post?.attributes.title" :content="post?.attributes.content" />
     <hr>
+    <Like :likes="post?.attributes.likes"/>
     <p>Compartilhe:</p>
     <Shared 
       :slug="post?.attributes.slug" 
       :description="post?.attributes.description" 
-      :likes="post?.attributes.likes" 
     />
   </main>
   <section class="posts-relation">
@@ -59,4 +59,16 @@ useSeoMeta({
 }, {
   mode: 'server',
 });
+useHead({
+  script: [
+    {
+      defer: 'true',
+      src: '/js/like.js'
+    },
+    {
+      defer: 'true',
+      src: '/js/slides.js'
+    }
+  ]
+})
 </script>

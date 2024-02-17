@@ -24,10 +24,24 @@ export default defineNuxtConfig({
           rel: 'icon',
           href: '/img/licoes1-p.jpg'
         }
-    ]
+      ],
+      script: [
+        {
+          defer: 'true',
+          src: '/js/menu.js'
+        }
+      ]
     }
   },
-  css: ['@/assets/css/main.css'],
+  css: ['../assets/css/main.css'],
+  devtools: {
+     enabled: false
+  },
+  // webpack: {
+  //    analyze: true,
+  //    optimizeCSS: true,
+  //    aggressiveCodeRemoval: true
+  // },
   modules: ['@nuxtjs/strapi', '@nuxtjs/color-mode', '@nuxt/image'],
   image: {
     format: ['webp'],

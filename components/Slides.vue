@@ -10,8 +10,4 @@
 </template>
 <script setup lang="ts">
 import slidesUrl from "../assets/json/slides.json";
-import slides from '../assets/ts/slides';
-onBeforeMount(() => {
-    slides();
-});
 </script>

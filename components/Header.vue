@@ -33,6 +33,4 @@
 </template>
 <script setup lang="ts">
 const colorMode = ref(useColorMode()); 
-import menu from '../assets/ts/menu'; 
-onBeforeMount(() => menu());
 </script>
