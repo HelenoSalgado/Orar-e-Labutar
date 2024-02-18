@@ -41,11 +41,11 @@ definePageMeta({
    title: 'Home'
 });
 useHead({
-    script: [
-        {
-            defer: 'true',
-            src: '/js/slides.js'
-        }
-    ]
+  script: [
+    {
+      defer: 'true',
+      src: '/js/slides.js'
+    }
+  ]
 });
 </script>

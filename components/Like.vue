@@ -9,6 +9,6 @@
  * talvez depois que o script é carregado no final da leitura da DOM HTML, porém,
  * como o objetivo é gerar página estática, o css será carregado normalmente, sem atraso.
 */
-import '../assets/css/like.css'
+import '../assets/css/like.css';
 const {likes} = defineProps(['likes']);
 </script>

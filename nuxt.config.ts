@@ -2,6 +2,10 @@ export default defineNuxtConfig({
   nitro: {
     output: {
       publicDir: 'dist'
+    },
+    prerender: {
+      autoSubfolderIndex: true,
+      crawlLinks: true
     }
   },
   runtimeConfig: {
@@ -10,15 +14,16 @@ export default defineNuxtConfig({
         defaultLocale: 'pt-BR',
         url: process.env.BASE_URL
       }
-    }
+    },
   },
   app: {
+    //baseURL: process.env.BASE_URL,
     head: {
       htmlAttrs: {
         lang: 'pt-BR'
       },
       charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.5',
+      viewport: 'width=device-width, initial-scale=1',
       link: [
         {
           rel: 'icon',
@@ -28,9 +33,26 @@ export default defineNuxtConfig({
       script: [
         {
           defer: 'true',
-          src: '/js/menu.js'
+          src: '/js/menu.js',
         }
       ]
+    }
+  },
+  experimental: {
+     renderJsonPayloads: false,
+     asyncEntry: false,
+     noVueServer: true,
+     respectNoSSRHeader: true,
+     sharedPrerenderData: true,
+  },
+  // vite: {
+  //   optimizeDeps: {
+  //     exclude: ['nuxtjs/color-mode', 'types/remarkable', 'nuxt']
+  //   }
+  // },
+  vue: {
+    compilerOptions: {
+      hoistStatic: true
     }
   },
   css: ['../assets/css/main.css'],
@@ -51,6 +73,11 @@ export default defineNuxtConfig({
     },
     alias: {
       cloudinary: 'https://res.cloudinary.com'
+    },
+    ipx: {
+      modifiers: {
+        fit: 'cover'
+      }
     }
   },
   strapi: {

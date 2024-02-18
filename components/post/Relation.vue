@@ -2,7 +2,7 @@
     <div class="post-card">
       <div class="post-card-box-image">
         <NuxtLink :href="'/posts/'+slug">
-          <NuxtImg :src="imgUrl" :alt="title" format="webp" loading="lazy"/>
+          <NuxtImg :src="imgUrl" :alt="title" format="webp" loading="lazy" width="300" height="200"/>
         </NuxtLink>
       </div>
         <div class="post-card-text">

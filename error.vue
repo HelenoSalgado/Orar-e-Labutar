@@ -8,8 +8,7 @@
     <Footer class="page-error-footer"></Footer>
 </template>
 <script setup lang="ts">
-import './assets/css/error.css';
-
+//import './assets/css/error.css';
 const { error } = defineProps({
     error: Object,
 });

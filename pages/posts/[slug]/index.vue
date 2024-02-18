@@ -70,5 +70,5 @@ useHead({
       src: '/js/slides.js'
     }
   ]
-})
+});
 </script>
