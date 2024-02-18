@@ -47,6 +47,7 @@ export default defineNuxtConfig({
      asyncEntry: true,
      payloadExtraction: false,
      typedPages: false,
+     appManifest: false
   },
   css: ['../assets/css/main.css'],
   devtools: {
@@ -67,17 +68,8 @@ export default defineNuxtConfig({
     //alias: {
       //cloudinary: 'https://res.cloudinary.com'
     //},
-    ipx: {
-      modifiers: {
-        fit: 'cover'
-      }
-    }
   },
   strapi: {
     url: process.env.BASE_URL_API
   },
-  colorMode: {
-    preference: 'light',
-    script: 'false'
-  }
 })

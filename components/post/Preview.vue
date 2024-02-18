@@ -1,14 +1,14 @@
 <template>
   <div class="post-card">
-    <div class="post-card-box-image">
       <NuxtLink :href="'/posts/'+slug">
-         <NuxtImg :src="imgUrl" :alt="title" width="300" height="200"/>
+         <NuxtImg class="post-card-image" :src="imgUrl" :alt="title" width="300" height="200"/>
       </NuxtLink>
-    </div>
       <div class="post-card-text">
         <h2>{{title}}</h2>
         <p>{{description}}</p>
-        <a :href="'/posts/'+slug">Ler Artigo</a>
+        <a :href="'/posts/'+slug">
+          <button>Ler Artigo</button>
+        </a>
       </div>
   </div>
 </template>
