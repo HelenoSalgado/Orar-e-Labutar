@@ -164,7 +164,7 @@ main img{
     background-color: var(--color-background);
     color: var(--color-dark-mode);
 }
-.dark-mode .post-card-text>a{
+.dark-mode .post-card-text button{
     background-color: var(--color-dark-mode);
     color: var(--color-background);
 }
