@@ -1,4 +1,4 @@
-<template>
+<template class="like-container">
     <div class="like-container">
         <span id="count-like">{{ likes || 0 }}</span>
         <IconsLike/>

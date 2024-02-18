@@ -1,12 +1,9 @@
 export default defineNuxtConfig({
   nitro: {
     output: {
-      publicDir: 'dist'
+      publicDir: 'dist',
     },
-    prerender: {
-      autoSubfolderIndex: true,
-      crawlLinks: true
-    }
+    baseURL: '/'
   },
   runtimeConfig: {
     public: {
@@ -28,7 +25,11 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           href: '/img/licoes1-p.jpg'
-        }
+        },
+        // {
+        //   rel: 'dns-prefetch',
+        //   href: 'https://res.cloudinary.com'
+        // }
       ],
       script: [
         {
@@ -40,20 +41,12 @@ export default defineNuxtConfig({
   },
   experimental: {
      renderJsonPayloads: false,
-     asyncEntry: false,
      noVueServer: true,
      respectNoSSRHeader: true,
      sharedPrerenderData: true,
-  },
-  // vite: {
-  //   optimizeDeps: {
-  //     exclude: ['nuxtjs/color-mode', 'types/remarkable', 'nuxt']
-  //   }
-  // },
-  vue: {
-    compilerOptions: {
-      hoistStatic: true
-    }
+     asyncEntry: true,
+     payloadExtraction: false,
+     typedPages: false,
   },
   css: ['../assets/css/main.css'],
   devtools: {
@@ -64,16 +57,16 @@ export default defineNuxtConfig({
   //    optimizeCSS: true,
   //    aggressiveCodeRemoval: true
   // },
-  modules: ['@nuxtjs/strapi', '@nuxtjs/color-mode', '@nuxt/image'],
+  modules: ['@nuxtjs/strapi' , '@nuxt/image'],
   image: {
     format: ['webp'],
     domains: ['https://res.cloudinary.com'],
-    cloudinary: {
-      baseURL: 'https://res.cloudinary.com/bio01/image/upload/'
-    },
-    alias: {
-      cloudinary: 'https://res.cloudinary.com'
-    },
+    //cloudinary: {
+      //baseURL: 'https://res.cloudinary.com/bio01/image/upload/'
+    //},
+    //alias: {
+      //cloudinary: 'https://res.cloudinary.com'
+    //},
     ipx: {
       modifiers: {
         fit: 'cover'
@@ -81,9 +74,10 @@ export default defineNuxtConfig({
     }
   },
   strapi: {
-    url: process.env.BASE_URL_API,
+    url: process.env.BASE_URL_API
   },
   colorMode: {
-    preference: 'light'
+    preference: 'light',
+    script: 'false'
   }
 })

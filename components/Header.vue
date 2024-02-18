@@ -25,12 +25,8 @@
         </div>
         <hr>
         <div class="menu-dark-mode">
-          <IconsDark @click="colorMode.preference = 'dark'"></IconsDark>
-          <IconsLight @click="colorMode.preference = 'light'"></IconsLight>
-          <IconsSystem @click="colorMode.preference = 'system'"></IconsSystem>
+          <IconsDark class="dark"></IconsDark>
+          <IconsLight class="light"></IconsLight>
         </div>
     </aside>
 </template>
-<script setup lang="ts">
-const colorMode = ref(useColorMode()); 
-</script>
