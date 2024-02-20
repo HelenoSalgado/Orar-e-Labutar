@@ -9,6 +9,10 @@ export interface TPost {
       authorId: string;
       profile: TProfile;
       categories: TCategory[];
+      navigatorSlug: {
+        before?: string;
+        next?: string;
+      };
       views: number;
       likes: number;
       createdAt: Date;

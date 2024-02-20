@@ -6,10 +6,24 @@
     <Like :likes="post?.attributes.likes"/>
     <p>Compartilhe:</p>
     <Shared 
-      :slug="post?.attributes.slug" 
+      :slug="'posts/'+post?.attributes.slug" 
       :description="post?.attributes.description" 
     />
   </main>
+  <section>
+    <div class="navigator-posts">
+      <NuxtLink 
+        v-if="post?.attributes.navigatorSlug?.before" 
+        :href="post?.attributes.navigatorSlug?.before">
+        &lang; Post Anterior
+      </NuxtLink>
+      <NuxtLink 
+        v-if="post?.attributes.navigatorSlug?.next" 
+        :href="post?.attributes.navigatorSlug?.next">
+          Próximo Post &rang;
+      </NuxtLink>
+    </div>
+  </section>
   <section class="posts-relation">
       <h2 class="title-icon-flex">
         <IconsBookOpen/> 
