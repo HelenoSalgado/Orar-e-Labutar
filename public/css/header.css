@@ -63,12 +63,11 @@ aside {
     position: fixed;
     top: 50px;
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     height: calc(100vh - 50px);
     background: var(--color-background);
-    font-size: 1.3rem;
-    color: rgb(238, 238, 238);
-    right: calc(-300px - 2rem);
+    font-size: 1.1rem;
+    right: calc(-250px - 2rem);
     -webkit-transition: all 500ms;
     transition: all 500ms;
     z-index: 1;
@@ -90,7 +89,12 @@ nav a {
     align-items: center;
     column-gap: .5rem;
 }
-
+nav a:last-child{
+    margin-bottom: 1rem;
+}
+nav svg{
+    width: 20px;
+}
 nav a::before{
     content: '';
     width: 0;

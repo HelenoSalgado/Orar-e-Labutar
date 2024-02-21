@@ -1,6 +1,7 @@
 <template>
      <footer>
+        <MapSite />
         <SocialMedia />
-        <p>&copy 2020-{{ new Date().getFullYear()}} Orar e Labutar | Desenvolvido por <a style="text-decoration: none;" href="https://heleno.dev" target="_blank">Heleno Salgado</a></p>
+        <p>&copy {{ new Date().getFullYear()}} Orar e Labutar - Feito com <LazyIconsHeart/></p>
       </footer>
 </template>
