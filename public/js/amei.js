@@ -12,7 +12,7 @@ const options = {
     "Content-Type": "application/json"
 };
 const data = {
-    slug: slug[slug.length - 1]
+    slug: slug[slug.length - 2]
 };
 function fillHeart(liked){
     if(liked){
