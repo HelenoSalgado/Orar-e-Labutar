@@ -19,7 +19,6 @@
 .amei-container svg{
     order: 2;
     cursor: pointer;
-    fill: #eb8484;
     stroke: #eb8484;
     transition: all 200ms;
     padding: 2px;
