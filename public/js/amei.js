@@ -27,7 +27,7 @@ if(localStorage.getItem(data.slug == 'true')){
     fillHeart(true);
 }
 
-fetch(apiUrl+'/'+slug[slug.length - 1]).then(async(res) => {
+fetch(apiUrl+'/'+slug).then(async(res) => {
    const likes = res.json(); 
    if(likes.statusCode == 404) return renderLikes(await createLike());
    renderLikes(likes);
