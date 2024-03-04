@@ -35,7 +35,9 @@ async function createLike(){
     const create = await fetch(apiUrl, { 
         method: 'POST',
         headers: options,
-        body: JSON.stringify(data)
+        body: JSON.stringify({
+            slug: slug[slug.length - 2]
+        })
     });
     renderLikes(await create.json());
 };
