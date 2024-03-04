@@ -4,8 +4,6 @@ countLikes.id = 'count-likes';
 
 const slug = window.location.pathname.split('/');
 
-console.log(slug);
-
 const apiUrl = 'https://amei-api.onrender.com/api/likes'; //'http://localhost:3001/api/likes';
 
 const options = {
