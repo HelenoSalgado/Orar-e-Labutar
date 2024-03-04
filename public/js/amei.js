@@ -3,11 +3,10 @@ const countLikes = document.createElement('span');
 countLikes.id = 'count-likes';
 
 const slug = location.pathname.split('/');
-const apiUrl = 'https://amei-api.onrender.com/api/likes';
+const apiUrl = 'https://amei-api.onrender.com/api/likes'; //'http://localhost:3001/api/likes';
 
 const options = {
-    "Content-Type": "application/json",
-    "Origin": location.hostname
+    "Content-Type": "application/json"
 };
 const data = {
     slug: slug[slug.length - 1]
