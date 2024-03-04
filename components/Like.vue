@@ -1,6 +1,5 @@
-<template class="like-container">
-    <div class="like-container">
-        <span id="count-like">{{ likes || 0 }}</span>
+<template>
+    <div class="amei-container">
         <LazyIconsHeart/>
     </div>
 </template>
@@ -10,5 +9,4 @@
  * como o objetivo é gerar página estática, o css será carregado normalmente, sem atraso.
 */
 //import '../assets/css/like.css';
-const {likes} = defineProps(['likes']);
 </script>

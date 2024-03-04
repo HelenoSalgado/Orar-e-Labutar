@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     output: {
       publicDir: 'dist',
     },
-    baseURL: '/'
+    baseURL: ''
   },
   runtimeConfig: {
     public: {
@@ -38,6 +38,11 @@ export default defineNuxtConfig({
         }
       ]
     }
+  },
+  router: {
+     options: {
+      
+     }
   },
   experimental: {
      renderJsonPayloads: false,

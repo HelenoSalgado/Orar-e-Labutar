@@ -1,10 +1,16 @@
 .social-media {
     display: flex;
     justify-content: space-around;
-    max-width: 400px;
+    max-width: 500px;
     margin: 2rem auto;
 }
-
 .social-media a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: .5rem;
     color: #eee;
+}
+.social-media span{
+    font-size: small;
 }

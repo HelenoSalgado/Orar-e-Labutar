@@ -18,7 +18,12 @@ export interface TPost {
       createdAt: Date;
       updatedAt: Date
     }
-}
+};
+
+export interface TLike{
+   canonicalUrl: string;
+   likes: number;
+};
 
 export interface User {
     id: number;

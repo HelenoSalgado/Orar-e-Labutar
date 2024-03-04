@@ -3,7 +3,7 @@
     <AuthorPublic :name="profile?.attributes.name" :img-url="profile?.attributes.imgUrl" :date="post?.attributes.updatedAt" :slug="profile?.attributes.slug" />
     <Post :title="post?.attributes.title" :content="post?.attributes.content" />
     <hr>
-    <Like :likes="post?.attributes.likes"/>
+    <Like/>
     <p>Compartilhe:</p>
     <Shared 
       :slug="'posts/'+post?.attributes.slug" 
@@ -77,7 +77,7 @@ useHead({
   script: [
     {
       defer: 'true',
-      src: '/js/like.js'
+      src: '/js/amei.js'
     },
     {
       defer: 'true',
