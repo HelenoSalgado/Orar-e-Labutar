@@ -17,7 +17,6 @@
     border-radius: 5px;
 }
 .amei-container svg{
-    order: 2;
     cursor: pointer;
     stroke: #eb8484;
     transition: all 200ms;

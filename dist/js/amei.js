@@ -1,23 +1,27 @@
 const containerLikes = document.querySelector('.amei-container');
 
-const slug = location.pathname.split('/').slice(-1);
+const data = {
+    slug
+};
+
+data.slug = location.pathname.split('/').slice(-1);
+
+if(data.slug == '') data.slug = pathname.split('/').slice(-2)[0];
 
 const apiUrl = 'https://amei-api.onrender.com/api/likes';
 
 const options = {
     "Content-Type": "application/json"
 };
-const data = {
-    slug
-};
+
 function fillHeart(liked){
     if(liked){
-       containerLikes.childNodes[0].style.fill = 'red';
-       containerLikes.childNodes[0].style.stroke = 'red';
+       containerLikes.childNodes[1].style.fill = 'red';
+       containerLikes.childNodes[1].style.stroke = 'red';
        return;
     }
-    containerLikes.childNodes[0].style.fill = '';
-    containerLikes.childNodes[0].style.stroke = '';
+    containerLikes.childNodes[1].style.fill = '';
+    containerLikes.childNodes[1].style.stroke = '';
 }
 
 if(localStorage.getItem(data.slug) == 'true'){
@@ -25,7 +29,7 @@ if(localStorage.getItem(data.slug) == 'true'){
 }
 
 (async() => {
-  await fetch(apiUrl+'/'+slug).then(async(res) => {
+  await fetch(apiUrl+'/'+data.slug).then(async(res) => {
    const likes = await res.json(); 
    if(likes.statusCode == 404){
     await createLike().then(async(res) => {
@@ -75,7 +79,6 @@ async function updateLike(){
 };
 
 containerLikes.addEventListener('click', async() => {
-    console.log(this);
     await updateLike();
 });
 
