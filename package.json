@@ -1,6 +1,5 @@
 {
   "name": "orarelabutar",
-  "private": false,
   "type": "module",
   "engines": {
     "node": ">=19.8.1"
