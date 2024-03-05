@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    //baseURL: process.env.BASE_URL,
+    baseURL: process.env.BASE_URL,
     head: {
       htmlAttrs: {
         lang: 'pt-BR'
