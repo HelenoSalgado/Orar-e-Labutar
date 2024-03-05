@@ -45,14 +45,7 @@ export default defineNuxtConfig({
      }
   },
   experimental: {
-     renderJsonPayloads: false,
-     noVueServer: true,
-     respectNoSSRHeader: true,
-     sharedPrerenderData: true,
-     asyncEntry: true,
-     payloadExtraction: false,
-     typedPages: false,
-     appManifest: false
+    renderJsonPayloads: false
   },
   css: ['../assets/css/main.css'],
   devtools: {

@@ -1,5 +1,6 @@
 <template>
     <div class="amei-container">
+        <span class="count-likes">0</span>
         <LazyIconsHeart/>
     </div>
 </template>

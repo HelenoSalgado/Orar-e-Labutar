@@ -7,3 +7,4 @@ yarn-error.log
 .wrangler
 deploy
 yarn.lock
+teste.js
