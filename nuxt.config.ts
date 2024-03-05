@@ -14,7 +14,6 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    baseURL: '/',
     head: {
       htmlAttrs: {
         lang: 'pt-BR'
@@ -31,6 +30,7 @@ export default defineNuxtConfig({
         //   href: 'https://res.cloudinary.com'
         // }
       ],
+      base: process.env.BASE_URL,
       script: [
         {
           defer: 'true',

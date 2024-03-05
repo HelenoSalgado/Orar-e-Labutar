@@ -1,12 +1,14 @@
 const containerLikes = document.querySelector('.amei-container');
 
 const data = {
-    slug
+    slug: ''
 };
 
 data.slug = location.pathname.split('/').slice(-1);
 
-if(data.slug == '') data.slug = pathname.split('/').slice(-2)[0];
+if(data.slug == '') data.slug = location.pathname.split('/').slice(-2)[0];
+
+console.log(data.slug);
 
 const apiUrl = 'https://amei-api.onrender.com/api/likes';
 
