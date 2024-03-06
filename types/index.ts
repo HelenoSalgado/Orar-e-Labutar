@@ -43,6 +43,7 @@ export interface TProfile {
     attributes: {
       name: string;
       imgUrl: string;
+      avatarUrl: string;
       biograpy: string;
       posts: TPostPreview[];
       slug: string;

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <AuthorPublic :name="profile?.attributes.name" :img-url="profile?.attributes.imgUrl" :date="post?.attributes.updatedAt" :slug="profile?.attributes.slug" />
+    <AuthorPublic :name="profile?.attributes.name" :avatar-url="profile?.attributes.avatarUrl" :date="post?.attributes.updatedAt" :slug="profile?.attributes.slug" />
     <Post :title="post?.attributes.title" :content="post?.attributes.content" />
     <hr>
     <Like/>
