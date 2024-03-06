@@ -10,7 +10,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "zip": "cd ./.output && zip -r dist.zip ."
+    "zip": "cd ./.output && zip -r dist.zip .",
+    "nuxtup": "nuxi upgrade"
   },
   "devDependencies": {
     "@types/remarkable": "^2.0.8",

@@ -14,12 +14,12 @@
     <div class="navigator-posts">
       <NuxtLink 
         v-if="post?.attributes.navigatorSlug?.before" 
-        :href="post?.attributes.navigatorSlug?.before">
+        :to="post?.attributes.navigatorSlug?.before">
         &lang; Post Anterior
       </NuxtLink>
       <NuxtLink 
         v-if="post?.attributes.navigatorSlug?.next" 
-        :href="post?.attributes.navigatorSlug?.next">
+        :to="post?.attributes.navigatorSlug?.next">
           Próximo Post &rang;
       </NuxtLink>
     </div>

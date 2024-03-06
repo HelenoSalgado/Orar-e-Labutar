@@ -1,9 +1,18 @@
 export default defineNuxtConfig({
   nitro: {
+    prerender: {
+      crawlLinks: true,
+      failOnError: false
+    },
     output: {
       publicDir: 'dist',
     },
-    baseURL: ''
+    baseURL: process.env.NUXT_APP_BASE_URL,
+    minify: true
+  },
+  experimental: {
+    renderJsonPayloads: false,
+    payloadExtraction: true
   },
   runtimeConfig: {
     public: {
@@ -21,11 +30,22 @@ export default defineNuxtConfig({
       },
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
+      meta: [
+        {
+          name: 'theme-color',
+          content: '#161616'
+        }
+      ],
       link: [
         {
           rel: 'icon',
           href: '/img/licoes1-p.jpg'
         },
+        {
+          rel: 'manifest',
+          href: '/pwa/manifest.webmanifest',
+          type: 'application/manifest+json'
+        }
         // {
         //   rel: 'dns-prefetch',
         //   href: 'https://res.cloudinary.com'
@@ -39,23 +59,10 @@ export default defineNuxtConfig({
       ]
     }
   },
-  router: {
-     options: {
-      
-     }
-  },
-  experimental: {
-    renderJsonPayloads: false
-  },
   css: ['../assets/css/main.css'],
   devtools: {
      enabled: false
   },
-  // webpack: {
-  //    analyze: true,
-  //    optimizeCSS: true,
-  //    aggressiveCodeRemoval: true
-  // },
   modules: ['@nuxtjs/strapi' , '@nuxt/image'],
   image: {
     format: ['webp'],
@@ -69,5 +76,5 @@ export default defineNuxtConfig({
   },
   strapi: {
     url: process.env.BASE_URL_API
-  },
+  }
 })

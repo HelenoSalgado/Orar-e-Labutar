@@ -42,7 +42,7 @@
         </blockquote>
 
 
-        <p>Orar e Labutar subscreve a Confissão de Fé Apostólica.</p>
+        <p>Orar e Labutar subscreve o Credo Apostólico e a Confissão de Fé de Westminster.</p>
 
         <p>Nossas redes sociais encontram-se no perfil @licoes1</p>
 
@@ -56,7 +56,7 @@
         <p>Compartilhe:</p>
         <Shared 
            slug="/sobre"
-           description="Conheça o propósito do blog orar e labutar."
+           description="Conheça o propósito do blog Orar e Labutar."
         />
     </main>
 </template>

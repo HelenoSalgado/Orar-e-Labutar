@@ -1,6 +1,6 @@
 <template>
     <div class="article-author">
-        <NuxtImg :src="imgUrl" :alt="name" width="60" height="60"/>
+        <NuxtImg loading="eager" :src="imgUrl" :alt="name" width="60" height="60"/>
         <div>
             <NuxtLink :to="'/authors/'+slug">{{ name }}</NuxtLink>
             <span class="article-author-date" v-html="transformDate(date)"></span>
