@@ -12,7 +12,7 @@
       </div>
       <hr>
       <p>Compartilhe:</p>
-      <Shared :slug="'/collection/'+slug" description="Veja todas as coleções do blog Orar e Labutar" />
+      <Shared :slug="'/collection/'+slug" :description="'Veja uma coleção de artigos de '+dataCollection.attributes.author "/>
   </main>
   <section>
       <Tags />
@@ -38,5 +38,19 @@ collections.value = data;
 
 const dataCollection = data[0];
 const posts = data[0].attributes.posts.data;
+
+useSeoMeta({
+  title: `${dataCollection.attributes.title}`,
+  ogType: 'website',
+  ogTitle: `${dataCollection.attributes.title}`,
+  description: `Veja uma coleção de artigos de ${dataCollection.attributes.author}`,
+  ogDescription: `Veja uma coleção de artigos de ${dataCollection.attributes.author}`,
+  ogImage: `${dataCollection.attributes.imgUrl}`,
+  twitterTitle: `${dataCollection.attributes.title}`,
+  twitterDescription: `Veja uma coleção de artigos de ${dataCollection.attributes.author}`,
+  twitterImage: `${dataCollection.attributes.imgUrl}`
+}, {
+  mode: 'server',
+});
 
 </script>
