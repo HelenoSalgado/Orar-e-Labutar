@@ -12,19 +12,35 @@
                   :slug="post.attributes?.slug"
                   :imgUrl="post.attributes?.imgURL"
                 />
-        </div>
+            </div>
+      <section>
+        <h2 class="title-icon-flex">
+          <IconsBookMark />
+          <span>Coleções</span>
+        </h2>
+           <div class="grid-container">
+                <PostCollection v-for="collection in dataColection" :key="collection.id"
+                :title="collection.attributes.title"
+                :imgUrl="collection.attributes.imgUrl"
+                :author="collection.attributes.author"
+                :slug="collection.attributes.slug"
+                :count="collection.attributes.posts?.data.length"
+                />
+          </div>
+      </section>
     </main>
-    <section>
-        <Tags/>
-    </section>
 </template>
 <script setup lang="ts">
-import type { TPostPreview } from '~/types';
+import type { TCollection, TPostPreview } from '~/types';
 import config from '~/config';
 const posts = ref<TPostPreview[]>();
+const collection = ref<TCollection[]>();
 
-const { data } = await usePost.previews();
-posts.value = data;
+const { data: dataPosts } = await usePost.previews();
+posts.value = dataPosts;
+
+const { data: dataColection } = await usePost.getCollection();
+collection.value = dataColection;
 
 useSeoMeta({
     title: 'Home',

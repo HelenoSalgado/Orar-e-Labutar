@@ -13,8 +13,6 @@ export interface TPost {
         before?: string;
         next?: string;
       };
-      views: number;
-      likes: number;
       createdAt: Date;
       updatedAt: Date
     }
@@ -91,6 +89,20 @@ export interface TPostPreview {
       imgURL: string;
       slug: string;
     }
+}
+interface CollectionPost{
+  data: TPost[]
+}
+
+export interface TCollection {
+  id: number;
+  attributes: {
+    title: string;
+    author: string;
+    imgUrl: string;
+    slug: string;
+    posts: CollectionPost
+  }
 }
 
 export interface TMeta {

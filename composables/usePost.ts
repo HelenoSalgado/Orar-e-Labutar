@@ -1,4 +1,4 @@
-import type { TPost, TPostPreview, TCategory, TMeta } from "~/types";
+import type { TPost, TPostPreview, TCategory, TMeta, TCollection } from "~/types";
 
 class UsePost{
     async get(slug: string){
@@ -61,6 +61,41 @@ class UsePost{
             meta: data.value?.meta as TMeta
         };
     };
+
+    async getCollection(){
+        const { find } = useStrapi();
+        const { data } = await useAsyncData('collections', () => find('collections', {
+            populate: {
+                posts: {
+                    fields: ['id']
+                }
+            }
+        }));
+        return {
+            data: data.value?.data as TCollection[],
+            meta: data.value?.meta as TMeta
+        }
+    }
+
+    async getCollectionPosts(slug: string){
+        const { find } = useStrapi();
+        const { data } = await useAsyncData('collections', () => find('collections', {
+            filters: {
+                slug: {
+                    $eq: slug
+                }
+            },
+            populate: {
+                posts: {
+                    fields: ['slug', 'imgURL', 'title', 'description']
+                }
+            }
+        }));
+        return {
+            data: data.value?.data as TCollection[],
+            meta: data.value?.meta as TMeta
+        }
+    }
 }
 
 export default new UsePost();
