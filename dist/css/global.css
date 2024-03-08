@@ -101,9 +101,9 @@ main img{
 .post-card {
     flex: 1 2 300px;
     height: auto;
+    background-color: #fff;
     border-radius: 7px;
     overflow: hidden;
-    background-color: #fff;
     box-shadow: var(--shadow-elevation-medium);
 }
 
