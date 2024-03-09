@@ -24,13 +24,13 @@
       </NuxtLink>
     </div>
   </section>
-  <section class="posts-relation">
+  <section>
       <h2 class="title-icon-flex">
         <IconsBookOpen/> 
         <span>Posts Relacionados</span>
       </h2>
-      <div v-for="postRelated in postsRelated" :key="postRelated.id">
-        <PostRelation v-if="postRelated?.id != post?.id"
+      <div class="grid-container">
+        <PostRelation v-for="postRelated in postsRelated" :key="postRelated.id"
          :title="postRelated.attributes.title"
          :img-url="postRelated.attributes.imgURL"
          :slug="postRelated.attributes.slug"
@@ -49,7 +49,7 @@ import type { TPost, TProfile } from '~/types';
 const slug = computed(() => useRoute().params.slug);
 const profile = ref<TProfile>();
 const post = ref<TPost>();
-const postsRelated = ref<TPost[]>();
+const postsRelated = ref<TPost[]>([]);
 
 const { data } = await usePost.get(slug.value.toString());
 
@@ -58,7 +58,11 @@ post.value = Object.values(data).at(0);
 const title = `Orar e Labutar | ${post.value?.attributes.title}`;
 
 profile.value = Object(post.value?.attributes.profile).data;
-postsRelated.value = Object(profile.value?.attributes.posts).data;
+const posts = Object(profile.value?.attributes.posts).data;
+
+for (let i = 0; i < posts.length; i++) {
+  if(posts[i].id != post.value?.id) postsRelated.value?.push(posts[i]);
+}
 
 useSeoMeta({
   title: `${title}`,

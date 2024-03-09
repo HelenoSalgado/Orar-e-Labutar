@@ -1,10 +1,10 @@
 <template>
-    <div class="post-card">
+    <div class="post-card-related">
         <NuxtLink :href="'/posts/'+slug">
-          <NuxtImg class="post-card-image" :src="imgUrl" :alt="title" loading="lazy" width="300" height="200"/>
+          <NuxtImg class="post-card-related-img" :src="imgUrl" :alt="title" loading="lazy" width="300" height="200"/>
         </NuxtLink>
-        <div class="post-card-text">
-          <h2>{{title}}</h2>
+        <div class="post-card-related-text">
+          <h3>{{title}}</h3>
         </div>
     </div>
   </template>
