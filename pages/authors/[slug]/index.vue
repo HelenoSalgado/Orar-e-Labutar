@@ -20,11 +20,12 @@
        />
        </div>
     </main>
-    <section class="posts-relation">
+    <section>
       <h2 class="title-icon-flex">
         <IconsUser/>
-        <span>Deste Autor</span></h2>
-      <div>
+        <span>Deste Autor</span>
+      </h2>
+      <div class="grid-container">
         <PostRelation v-for="post in posts" :key="post.id"
          :title="post.attributes.title"
          :img-url="post.attributes.imgURL"
