@@ -47,6 +47,7 @@
     </section>
 </template>
 <script setup lang="ts">
+import config from '~/config';
 import type { TPostPreview, TProfile } from '~/types';
 const slug = computed(() => useRoute().params.slug);
 const profile = ref<TProfile>();
@@ -66,10 +67,10 @@ useSeoMeta({
   ogTitle: `${title}`,
   description,
   ogDescription: `${description.value}`,
-  ogImage: `/img/${profile.value?.attributes.imgUrl}`,
+  ogImage: `${config.baseURL}/img/${profile.value?.attributes.imgUrl}`,
   twitterTitle: `${title}`,
   twitterDescription: `${description.value}`,
-  twitterImage: `/img/${profile.value?.attributes.imgUrl}`,
+  twitterImage: `${config.baseURL}/img/${profile.value?.attributes.imgUrl}`,
 }, {
   mode: 'server',
 });

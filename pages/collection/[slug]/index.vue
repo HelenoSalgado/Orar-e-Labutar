@@ -28,6 +28,7 @@
 }
 </style>
 <script setup lang="ts">
+import config from '~/config';
 import type { TCollection } from '~/types';
 const collections = ref<TCollection[]>();
 
@@ -45,10 +46,10 @@ useSeoMeta({
   ogTitle: `${dataCollection.attributes.title}`,
   description: `Veja uma coleção de artigos de ${dataCollection.attributes.author}`,
   ogDescription: `Veja uma coleção de artigos de ${dataCollection.attributes.author}`,
-  ogImage: `/img/${dataCollection.attributes.imgUrl}`,
+  ogImage: `${config.baseURL}/img/${dataCollection.attributes.imgUrl}`,
   twitterTitle: `${dataCollection.attributes.title}`,
   twitterDescription: `Veja uma coleção de artigos de ${dataCollection.attributes.author}`,
-  twitterImage: `/img/${dataCollection.attributes.imgUrl}`
+  twitterImage: `${config.baseURL}/img/${dataCollection.attributes.imgUrl}`
 }, {
   mode: 'server',
 });
