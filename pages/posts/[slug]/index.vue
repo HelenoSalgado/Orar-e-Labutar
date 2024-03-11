@@ -41,7 +41,7 @@
       <Tags />
   </section>
   <section>
-    <Slides />
+    <Slides mode-loading="lazy"/>
   </section>
 </template>
 <script setup lang="ts">

@@ -1,5 +1,5 @@
 <template>
-    <Slides/>
+    <Slides mode-loading="eager"/>
     <main>
         <h1 class="title-icon-flex">
             <IconsBookOpen/>
