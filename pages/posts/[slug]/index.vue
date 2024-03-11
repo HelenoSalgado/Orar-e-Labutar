@@ -1,6 +1,6 @@
 <template>
   <main>
-    <AuthorPublic :name="profile?.attributes.name" :avatar-url="profile?.attributes.avatarUrl" :date="post?.attributes.updatedAt" :slug="profile?.attributes.slug" />
+    <AuthorPublic :name="profile?.attributes.name" :img-url="profile?.attributes.imgUrl" :date="post?.attributes.updatedAt" :slug="profile?.attributes.slug" />
     <Post :title="post?.attributes.title" :content="post?.attributes.content" />
     <hr>
     <Like/>
@@ -70,10 +70,10 @@ useSeoMeta({
   ogTitle: `${title}`,
   description: `${post.value?.attributes.description}`,
   ogDescription: `${post.value?.attributes.description}`,
-  ogImage: `${post.value?.attributes.imgURL}`,
+  ogImage: `/img/${post.value?.attributes.imgURL}`,
   twitterTitle: `${title}`,
   twitterDescription: `${post.value?.attributes.description}`,
-  twitterImage: `${post.value?.attributes.imgURL}`
+  twitterImage: `/img/${post.value?.attributes.imgURL}`
 }, {
   mode: 'server',
 });

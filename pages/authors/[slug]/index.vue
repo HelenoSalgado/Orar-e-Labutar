@@ -4,8 +4,8 @@
         <article>
           <div class="biograpy-box-image">
             <NuxtImg 
-               :src="profile?.attributes.imgUrl" 
-               :alt="profile?.attributes.name" 
+               :src="'/img/'+profile?.attributes.imgUrl" 
+               :alt="profile?.attributes.name"
                width="800px" 
             />
           </div>
@@ -66,10 +66,10 @@ useSeoMeta({
   ogTitle: `${title}`,
   description,
   ogDescription: `${description.value}`,
-  ogImage: `${profile.value?.attributes.imgUrl}`,
+  ogImage: `/img/${profile.value?.attributes.imgUrl}`,
   twitterTitle: `${title}`,
   twitterDescription: `${description.value}`,
-  twitterImage: `${profile.value?.attributes.imgUrl}`,
+  twitterImage: `/img/${profile.value?.attributes.imgUrl}`,
 }, {
   mode: 'server',
 });

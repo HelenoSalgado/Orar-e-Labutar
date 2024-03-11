@@ -1,6 +1,6 @@
 <template>
     <div class="article-author">
-        <NuxtImg :src="avatarUrl" :alt="name" width="60" height="60"/>
+        <NuxtImg preset="avatar" :preload="true" :src="'/img/'+imgUrl" :alt="name"/>
         <div>
             <NuxtLink :to="'/authors/'+slug">{{ name }}</NuxtLink>
             <span class="article-author-date" v-html="transformDate(date)"></span>
@@ -8,5 +8,5 @@
     </div>
 </template>
 <script setup lang="ts">
-const { avatarUrl, name, date, slug } = defineProps(['avatarUrl', 'name', 'date', 'slug']);
+const { imgUrl, name, date, slug } = defineProps(['imgUrl', 'name', 'date', 'slug']);
 </script>

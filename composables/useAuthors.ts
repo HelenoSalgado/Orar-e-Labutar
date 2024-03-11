@@ -23,7 +23,7 @@ class UseAuthors{
     async getAll(){
         const { findOne } = useStrapi();
         const { data } = await useAsyncData('profiles', () => findOne('profiles', {
-            fields: ['name', 'avatarUrl', 'slug', 'createdAt']
+            fields: ['name', 'imgUrl', 'slug', 'createdAt']
         }));
         return {
             data: data.value?.data as TProfile,

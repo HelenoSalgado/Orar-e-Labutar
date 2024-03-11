@@ -1,3 +1,3 @@
 export default{
-    baseURL: 'https://orarelabutar.pages.dev' || process.env.BASE_URL
+    baseURL: 'https://orarelabutar.com' || process.env.BASE_URL
 }

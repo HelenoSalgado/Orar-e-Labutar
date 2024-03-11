@@ -57,13 +57,6 @@ definePageMeta({
    title: 'Home'
 });
 useHead({
-  link: [
-    {
-      rel: 'preload',
-      href: '/_ipx/s_600x400/https://res.cloudinary.com/bio01/image/upload/v1701221407/teology/ssqr3y0mrvucseacdgnf.webp',
-      as: 'image'
-    }
-  ],
   script: [
     {
       defer: 'true',

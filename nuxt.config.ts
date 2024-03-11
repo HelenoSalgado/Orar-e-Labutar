@@ -1,9 +1,13 @@
 export default defineNuxtConfig({
   nitro: {
-    prerender: {
-      crawlLinks: true,
-      failOnError: false
+    // prerender: {
+    //   crawlLinks: true,
+    //   failOnError: false
+    // },
+    future: {
+      nativeSWR: true
     },
+    static: true,
     output: {
       publicDir: 'dist',
     },
@@ -25,6 +29,9 @@ export default defineNuxtConfig({
   app: {
     baseURL: process.env.NUXT_APP_BASE_URL,
     head: {
+      base: {
+        href: process.env.BASE_URL
+      },
       htmlAttrs: {
         lang: 'pt-BR'
       },
@@ -46,10 +53,6 @@ export default defineNuxtConfig({
           href: '/pwa/manifest.webmanifest',
           type: 'application/manifest+json'
         }
-        // {
-        //   rel: 'dns-prefetch',
-        //   href: 'https://res.cloudinary.com'
-        // }
       ],
       script: [
         {
@@ -66,13 +69,19 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/strapi' , '@nuxt/image'],
   image: {
     format: ['webp'],
-    domains: ['https://res.cloudinary.com'],
-    //cloudinary: {
-      //baseURL: 'https://res.cloudinary.com/bio01/image/upload/'
-    //},
-    //alias: {
-      //cloudinary: 'https://res.cloudinary.com'
-    //},
+    presets: {
+      avatar: {
+        modifiers: {
+          width: 60,
+          height: 60
+        }
+      },
+    },
+    screens: {
+      'xs': 360,
+      'md': 600,
+      'lg': 1200,
+    },
   },
   strapi: {
     url: process.env.BASE_URL_API

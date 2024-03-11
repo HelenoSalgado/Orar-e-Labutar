@@ -45,10 +45,10 @@ useSeoMeta({
   ogTitle: `${dataCollection.attributes.title}`,
   description: `Veja uma coleção de artigos de ${dataCollection.attributes.author}`,
   ogDescription: `Veja uma coleção de artigos de ${dataCollection.attributes.author}`,
-  ogImage: `${dataCollection.attributes.imgUrl}`,
+  ogImage: `/img/${dataCollection.attributes.imgUrl}`,
   twitterTitle: `${dataCollection.attributes.title}`,
   twitterDescription: `Veja uma coleção de artigos de ${dataCollection.attributes.author}`,
-  twitterImage: `${dataCollection.attributes.imgUrl}`
+  twitterImage: `/img/${dataCollection.attributes.imgUrl}`
 }, {
   mode: 'server',
 });

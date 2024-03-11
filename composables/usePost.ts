@@ -11,7 +11,7 @@ class UsePost{
            },
            populate: {
             profile: {
-                fields: ['name', 'avatarUrl', 'slug'],
+                fields: ['name', 'imgUrl', 'slug'],
                 populate: {
                     posts: {
                         fields: ['title', 'imgURL', 'slug']
