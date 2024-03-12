@@ -17,8 +17,7 @@ export default defineNuxtConfig({
   },
   experimental: {
     renderJsonPayloads: false,
-    payloadExtraction: true,
-    appManifest: true
+    payloadExtraction: true
   },
   runtimeConfig: {
     public: {
