@@ -12,6 +12,9 @@
         <a :href="slugShared.pocket()">
             <LazyIconsPocket />
         </a>
+        <a :href="slugShared.whatsapp()">
+            <LazyIconsWhatsApp />
+        </a>
     </div>
 </template>
 

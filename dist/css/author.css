@@ -26,14 +26,14 @@
 }
 .biograpy-box-image{
     object-fit: cover;
-    max-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    aspect-ratio: 3/2;
     overflow: hidden;
     border-radius: 7px;
 }
 .biograpy-box-image img{
-    width: 100%;
+    max-width: 800px;
     border-radius: 7px;
 }

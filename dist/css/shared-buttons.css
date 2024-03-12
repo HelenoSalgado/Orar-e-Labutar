@@ -7,3 +7,8 @@
 .shared-buttons svg{
     color: var(--color-background);
 }
+.feather-phone{
+   margin-bottom: 7.5px;
+   margin-left: -18.5px;
+   fill: black;
+}

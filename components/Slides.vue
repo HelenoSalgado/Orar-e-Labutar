@@ -1,7 +1,7 @@
 <template>
     <div class="slides-container">
         <NuxtLink class="mySlides" v-for="{id, name, desktop, referer} in slidesUrl" :key="id" :href="referer">
-            <NuxtImg :loading="modeLoading" :src="desktop" width="1200" height="auto" :alt="name"/>
+            <NuxtImg :loading="modeLoading" sizes="xs:320px, sm:640px, md:768px, lg:1024px, xl:1280px" :src="desktop" width="1200" height="auto" :alt="name"/>
         </NuxtLink>
     </div>
     <div class="slides-circles-container">

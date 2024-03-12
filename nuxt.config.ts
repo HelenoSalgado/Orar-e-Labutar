@@ -29,7 +29,7 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    baseURL: process.env.BASE_URL,
+    //baseURL: process.env.BASE_URL,
     buildAssetsDir: 'nuxt',
     head: {
       base: {
@@ -78,8 +78,18 @@ export default defineNuxtConfig({
           width: 60,
           height: 60
         }
-      }
-    }
+      },
+      screens: {
+        'xs': 320,
+        'sm': 640,
+        'md': 768,
+        'lg': 1024,
+        'xl': 1280,
+        'xxl': 1536,
+        '2xl': 1536
+      },
+    },
+    quality: 80
   },
   strapi: {
     url: process.env.BASE_URL_API

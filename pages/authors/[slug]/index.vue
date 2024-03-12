@@ -8,6 +8,7 @@
                :alt="profile?.attributes.name"
                width="800px" 
                height="400px"
+               sizes="xs:320px, sm:640px, md:768px"
             />
           </div>
           <h1>{{profile?.attributes.name}}</h1>
