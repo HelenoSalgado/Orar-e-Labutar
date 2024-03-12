@@ -1,7 +1,7 @@
 <template>
   <div class="post-card">
       <NuxtLink :href="'/posts/'+slug">
-         <NuxtImg class="post-card-image" sizes="xs:360px" :src="'/img/'+imgUrl" :alt="title" width="300" height="200"/>
+         <NuxtImg class="post-card-image" :src="'/img/'+imgUrl" :alt="title" width="300" height="200"/>
       </NuxtLink>
       <div class="post-card-text">
         <h2>{{title}}</h2>

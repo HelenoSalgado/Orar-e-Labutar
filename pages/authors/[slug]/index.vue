@@ -7,6 +7,7 @@
                :src="'/img/'+profile?.attributes.imgUrl" 
                :alt="profile?.attributes.name"
                width="800px" 
+               height="400px"
             />
           </div>
           <h1>{{profile?.attributes.name}}</h1>
@@ -39,7 +40,7 @@
         <span>Autores</span>
       </h1>
         <div class="container-authors">
-            <AuthorPreview />
+          <AuthorPreview />
         </div>
     </section>
     <section>

@@ -1,13 +1,14 @@
 export default defineNuxtConfig({
   nitro: {
-    // prerender: {
-    //   crawlLinks: true,
-    //   failOnError: false
-    // },
-    future: {
-      nativeSWR: true
+    rollupConfig: {
+      cache: {
+        modules: [{
+          ast: {
+            sourceType: 'script'
+          }
+        }]
+      }
     },
-    static: true,
     output: {
       publicDir: 'dist',
     },
@@ -16,18 +17,20 @@ export default defineNuxtConfig({
   },
   experimental: {
     renderJsonPayloads: false,
-    payloadExtraction: true
+    payloadExtraction: true,
+    appManifest: true
   },
   runtimeConfig: {
     public: {
       site: {
         defaultLocale: 'pt-BR',
         url: process.env.BASE_URL
-      }
+      },
     },
   },
   app: {
-    baseURL: process.env.NUXT_APP_BASE_URL,
+    baseURL: process.env.BASE_URL,
+    buildAssetsDir: 'nuxt',
     head: {
       base: {
         href: process.env.BASE_URL
@@ -75,13 +78,8 @@ export default defineNuxtConfig({
           width: 60,
           height: 60
         }
-      },
-    },
-    screens: {
-      'xs': 360,
-      'md': 600,
-      'lg': 1200,
-    },
+      }
+    }
   },
   strapi: {
     url: process.env.BASE_URL_API

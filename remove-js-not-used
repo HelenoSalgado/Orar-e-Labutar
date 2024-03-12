@@ -1,0 +1,22 @@
+#! /bin/bash
+
+DIR=$1;
+
+SCAN_DIR_LEVEL_01=`(ls ${DIR}/*html)`;
+SCAN_DIR_LEVEL_02=`(ls ${DIR}/**/*html)`;
+SCAN_DIR_LEVEL_03=`(ls ${DIR}/**/**/*html)`;
+
+REGEX_REMOVE_JS='/<link rel="modulepreload" as="script"/, /<script type="module"/d';
+
+remove_script_js_head_html(){
+    for file in $1; 
+       do   
+          echo $REGEX_REMOVE_JS $PWD/$file;
+          sed -i "$REGEX_REMOVE_JS" $PWD/$file;
+    done
+    
+};
+
+remove_script_js_head_html "$SCAN_DIR_LEVEL_01";
+remove_script_js_head_html "$SCAN_DIR_LEVEL_02";
+remove_script_js_head_html "$SCAN_DIR_LEVEL_03";

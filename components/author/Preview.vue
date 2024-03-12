@@ -1,6 +1,6 @@
 <template>
     <div class="card-author" v-for="auth in authors" :key="auth.id">
-        <NuxtImg preset="avatar" :src="'/img/'+auth.attributes.imgUrl" :alt="auth.attributes.name"/>
+        <NuxtImg preset="avatar" :src="'/img/'+auth.attributes.imgUrl" :alt="auth.attributes.name" width="60" height="60"/>
         <div>
             <h3>{{ auth.attributes.name }}</h3>
             <p>Deste {{ transformDate(auth.attributes.createdAt) }}</p>
