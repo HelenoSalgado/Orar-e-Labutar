@@ -1,14 +1,23 @@
 .shared-buttons{
     margin: 1rem 0;
     display: flex;
-    column-gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
     align-items: center;
 }
 .shared-buttons svg{
     color: var(--color-background);
+    width: 18px;
+}
+.shared-buttons span{
+    font-size: small;
+    background-color: var(--color-background-soft);
+    color: var(--color-background);
+    padding: 0 .2rem;
+
 }
 .feather-phone{
-   margin-bottom: 7.5px;
-   margin-left: -18.5px;
-   fill: black;
+   margin-bottom: 1.3px;
+   margin-left: -23px;
+   fill: var(--color-background);
 }

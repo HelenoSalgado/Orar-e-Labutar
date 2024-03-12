@@ -1,19 +1,24 @@
 <template>
     <div class="shared-buttons">
-        <a :href="slugShared.x()">
+        <a class="title-icon-flex" :href="slugShared.x()">
             <LazyIconsX />
+            <span>X/Twitter</span>
         </a>
-        <a :href="slugShared.facebook()">
+        <a class="title-icon-flex" :href="slugShared.facebook()">
             <LazyIconsFacebook />
+            <span>Facebook</span>
         </a>
-        <a :href="slugShared.linkedin()">
+        <a class="title-icon-flex" :href="slugShared.linkedin()">
             <LazyIconsLinkedin />
+            <span>Linkedin</span>
         </a>
-        <a :href="slugShared.pocket()">
+        <a class="title-icon-flex" :href="slugShared.pocket()">
             <LazyIconsPocket />
+            <span>Pocket</span>
         </a>
-        <a :href="slugShared.whatsapp()">
+        <a class="title-icon-flex" :href="slugShared.whatsapp()">
             <LazyIconsWhatsApp />
+            <span>WhatsApp</span>
         </a>
     </div>
 </template>
