@@ -25,7 +25,7 @@ export default defineNuxtConfig({
         defaultLocale: 'pt-BR',
         url: process.env.BASE_URL
       },
-    },
+    }
   },
   app: {
     //baseURL: process.env.BASE_URL,
@@ -46,10 +46,6 @@ export default defineNuxtConfig({
         }
       ],
       link: [
-        {
-          rel: 'icon',
-          href: '/img/licoes1-p.jpg'
-        },
         {
           rel: 'manifest',
           href: '/pwa/manifest.webmanifest',

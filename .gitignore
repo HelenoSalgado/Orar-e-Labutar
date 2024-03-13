@@ -9,4 +9,4 @@ deploy
 yarn.lock
 teste.js
 sw.*
-dist
+./dist/*

@@ -15,7 +15,7 @@
  }
 .article-author a{
    text-decoration: none;
-   color: #000;
+   color: var(--color-font);
    font-weight: bold;
 }
 .article-author-date{
