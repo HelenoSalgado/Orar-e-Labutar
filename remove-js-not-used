@@ -8,12 +8,12 @@ SCAN_DIR_LEVEL_03=`(ls ${DIR}/**/**/*html)`;
 
 REGEX_REMOVE_JS='/<link rel="modulepreload" as="script"/, /<script type="module"/d';
 
-echo "" > remove-js.log;
+echo "" > remove-js-not-used.log;
 
 remove_script_js_head_html(){
     for file in $1; 
        do
-        echo $file >> remove-js.log;
+        echo $file >> remove-js-not-used.log;
         sed -i "$REGEX_REMOVE_JS" $PWD/$file;
     done
 };
@@ -24,6 +24,6 @@ remove_script_js_head_html "$SCAN_DIR_LEVEL_03";
 
 echo "------------------------------------------------";
 echo "$(tput setaf 2)Foram removidos javascript nas seguintes páginas:$(tput sgr0)";
-cat remove-js.log;
+cat remove-js-not-used.log;
 echo "";
 echo "------------------------------------------------";
