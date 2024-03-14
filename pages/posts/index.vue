@@ -17,15 +17,6 @@
         <Tags />
     </section>
 </template>
-<style scoped>
-.grid-container {
-    margin: 3rem 0 2rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    gap: 2.5rem;
-}
-</style>
 <script setup lang="ts">
 import type { TPostPreview } from '~/types';
 const posts = ref<TPostPreview[]>();
