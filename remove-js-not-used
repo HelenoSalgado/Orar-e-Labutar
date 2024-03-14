@@ -8,18 +8,15 @@ SCAN_DIR_LEVEL_02=`(ls ${DIR}/**/*html)`;
 SCAN_DIR_LEVEL_03=`(ls ${DIR}/**/**/*html)`;
 
 #Altera arquivos HTML
-REGEX_REMOVE_JS='/<link.*modulepreload.*>/d';
-REGEX_REMOVE_JSON='/<script.*module.*><\/script>/d';
+REGEX_REMOVE_JS_FOOTER='s/<\/footer.*/<\/footer><\/body><\/html>/';
 REGEX_REMOVE_DIV_NUXT='s/<div id="__nuxt">/\n/';
-REGEX_REMOVE_FOOTER='s/<\/footer>/\n/';
-REGEX_REMOVE_SCRIPT='/<\/div><script type="module">/d';
-REGEX_ADD_HTML="</footer></body></html>";
+REGEX_REMOVE_JS01='/<link rel="modulepreload".*>/d';
+REGEX_REMOVE_JS02='s/<script.*module.*><\/script>/\n/';
 
 #Exclui arquivos de payload que não são mais necessários
 SCAN_FILE_LEVEL_01=`(ls ${DIR}/_payload.js)`;
 SCAN_FILE_LEVEL_02=`(ls ${DIR}/**/_payload.js)`;
 SCAN_FILE_LEVEL_03=`(ls ${DIR}/**/**/_payload.js)`;
-FILE_JS='_payload.js';
 
 echo "" > remove-js-not-used.log;
 
@@ -27,12 +24,11 @@ remove_script_js_head_html(){
     for file in $1; 
        do
         echo $file >> remove-js-not-used.log;
-        sed -i "$REGEX_REMOVE_JS" $PWD/$file;
-        sed -i "$REGEX_REMOVE_JSON" $PWD/$file;
-        sed -i "$REGEX_REMOVE_DIV_NUXT" $PWD/$file;
-        sed -i "$REGEX_REMOVE_FOOTER" $PWD/$file;
-        sed -i "$REGEX_REMOVE_SCRIPT" $PWD/$file;
-        echo $REGEX_ADD_HTML >> $PWD/$file;
+        sed -i -e \
+        "$REGEX_REMOVE_DIV_NUXT" -e \
+        "$REGEX_REMOVE_JS01" -e \
+        "$REGEX_REMOVE_JS02" -e \
+        "$REGEX_REMOVE_JS_FOOTER" $PWD/$file;
     done
 };
 
