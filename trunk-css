@@ -1,0 +1,11 @@
+#! /bin/bash
+
+tr -s '[:space:]' ' ' < ./dist/css/global.css >> ./dist/css/main.css;
+tr -s '[:space:]' ' ' < ./dist/css/header.css >> ./dist/css/main.css;
+tr -s '[:space:]' ' ' < ./dist/css/author.css >> ./dist/css/main.css;
+tr -s '[:space:]' ' ' < ./dist/css/slides.css >> ./dist/css/main.css;
+tr -s '[:space:]' ' ' < ./dist/css/shared-buttons.css >> ./dist/css/main.css;
+tr -s '[:space:]' ' ' < ./dist/css/social-media.css >> ./dist/css/main.css;
+tr -s '[:space:]' ' ' < ./dist/css/collection-posts.css >> ./dist/css/main.css;
+tr -s '[:space:]' ' ' < ./dist/css/amei.css >> ./dist/css/main.css;
+tr -s '[:space:]' ' ' < ./dist/css/footer.css >> ./dist/css/main.css;

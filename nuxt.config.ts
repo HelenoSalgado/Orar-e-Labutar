@@ -47,6 +47,11 @@ export default defineNuxtConfig({
       ],
       link: [
         {
+          rel: 'stylesheet',
+          href: '/css/main.css',
+          type: 'text/css'
+        },
+        {
           rel: 'manifest',
           href: '/pwa/manifest.webmanifest',
           type: 'application/manifest+json'
@@ -60,7 +65,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  css: ['../assets/css/main.css'],
+  //css: ['../assets/css/main.css'],
   devtools: {
      enabled: false
   },
