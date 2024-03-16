@@ -48,7 +48,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: 'stylesheet',
-          href: '/css/main.css',
+          href: '/css/main.min.css',
           type: 'text/css'
         },
         {
