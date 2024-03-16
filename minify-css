@@ -27,7 +27,7 @@ minify_main_css_complet(){
     while [ $count -le 700 ] 
     do
         sed -i 's/{ /{/' "$PWD/dist/css/main.min.css";
-        sed -i 's/ }/}/' "$PWD/dist/css/main.min.css";
+        sed -i 's/ } /}/' "$PWD/dist/css/main.min.css";
         sed -i 's/: /:/' "$PWD/dist/css/main.min.css";
         sed -i 's/; /;/' "$PWD/dist/css/main.min.css";
 
