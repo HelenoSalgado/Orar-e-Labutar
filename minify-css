@@ -1,48 +1,42 @@
 #! /bin/bash
 
-if [ -f "$PWD/dist/css/main.min.css" ];
+FILE_RESULT_MIN_CSS=$PWD/dist/css/main.min.css;
+
+# Verifica se já existe o mesmo arquivo css minificado. Se sim, apaga.
+if [ -f $FILE_RESULT_MIN_CSS ];
     then 
-        rm -rf "$PWD/dist/css/main.min.css";
-        rm -rf "$PWD/dist/css/main.min.pre.css";
-        echo "Preparando para iniciar minificação...";
-        sleep 2;
-    else
-        echo "Pronto para iniciar.";
-        sleep 2;
+    rm -rf $FILE_RESULT_MIN_CSS;
 fi
 
+# Lista todos os arquivos CSSs na pasta css/
 SCAN_DIR_CSS=`(ls $PWD/dist/css/*.css)`;
 
+# Suprime todos os espaços redundantes dos arquivos .css e redireciona a saída
+# para main.min.css.
 concat_and_minify_css(){
-    echo "" > minify-css.log;
     for file in $1; 
        do
-        tr -s '[:space:]' ' ' < "$file" >> "$PWD/dist/css/main.min.css";
-        echo "$file" >> minify-css.log;
+        # Remove comentários inline | Suprime espaços >> redireciona a saída.
+        sed '/^\/.*[\/$]/d' "$file" | tr -s '[:space:]' ' ' >> "$FILE_RESULT_MIN_CSS";
     done
 };
 
+# Termina o trabalho de minificação, removendo espaços específicos.
 minify_main_css_complet(){
-    count=0;
-    while [ $count -le 700 ] 
-    do
-        sed -i 's/{ /{/' "$PWD/dist/css/main.min.css";
-        sed -i 's/ } /}/' "$PWD/dist/css/main.min.css";
-        sed -i 's/: /:/' "$PWD/dist/css/main.min.css";
-        sed -i 's/; /;/' "$PWD/dist/css/main.min.css";
-
-        count=$(( $count + 1 ));
-    done
+    sed -i -e \
+        's/ {/{/g' -e \
+        's/{ /{/g' -e \
+        's/ } /}/g' -e \
+        's/: /:/g' -e \
+        's/; /;/g' -e \
+        's/, /,/g' -e \
+        's/ > />/g' -e \
+        's/ \/ /\//g' $FILE_RESULT_MIN_CSS;
 };
 
+# Chamada das funções.
 concat_and_minify_css "$SCAN_DIR_CSS";
 minify_main_css_complet;
 
-echo "------------------------------------------------";
-echo "";
-echo "$(tput setaf 2)Os seguintes arquivos css foram minificados e copiados para 
-o arquivo main.min.css:$(tput sgr0)";
-echo "";
-cat minify-css.log;
-echo "";
-echo "------------------------------------------------";
+echo "$(tput setaf 2)CSS minificado:$(tput sgr0)";
+echo "$(tput setaf 3)$FILE_RESULT_MIN_CSS$(tput sgr0)";
