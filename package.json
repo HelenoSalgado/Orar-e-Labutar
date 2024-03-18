@@ -7,7 +7,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate && bash remove-js-not-used dist && bash minify-css",
+    "generate": "nuxt generate && bash remove-js-not-used dist && bash minify -r dist/css css && bash minify -i dist/js/menu.js && bash minify -i dist/js/slides.js && bash minify -i dist/js/amei.js",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "zip": "cd ./.output && zip -r dist.zip .",
