@@ -1,14 +1,5 @@
 export default defineNuxtConfig({
   nitro: {
-    rollupConfig: {
-      cache: {
-        modules: [{
-          ast: {
-            sourceType: 'script'
-          }
-        }]
-      }
-    },
     output: {
       publicDir: 'dist',
     },
@@ -26,6 +17,22 @@ export default defineNuxtConfig({
         url: process.env.BASE_URL
       },
     }
+  },
+  $production: {
+    app: {
+      head: {
+        link: [
+          {
+            rel: 'stylesheet',
+            href: '/css/main.min.css',
+            type: 'text/css'
+          },
+        ]
+      }
+    }
+  },
+  $development: {
+    css: ['../assets/css/main.css'],
   },
   app: {
     //baseURL: process.env.BASE_URL,
@@ -47,11 +54,6 @@ export default defineNuxtConfig({
       ],
       link: [
         {
-          rel: 'stylesheet',
-          href: '/css/main.min.css',
-          type: 'text/css'
-        },
-        {
           rel: 'manifest',
           href: '/pwa/manifest.webmanifest',
           type: 'application/manifest+json'
@@ -65,7 +67,6 @@ export default defineNuxtConfig({
       ]
     }
   },
-  //css: ['../assets/css/main.css'],
   devtools: {
      enabled: false
   },
